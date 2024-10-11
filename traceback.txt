@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 72, in script
-    narrator "With a lot to think about, I take *[heroine_name]*'s hand, and we leave the hospital office."
+  File "game/script.rpy", line 92, in script
+    narrator "*[heroine_name]* interrupts me with some brain rot sentence, I respond:"
 NameError: Name 'heroine_name' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 72, in script
-    narrator "With a lot to think about, I take *[heroine_name]*'s hand, and we leave the hospital office."
+  File "game/script.rpy", line 92, in script
+    narrator "*[heroine_name]* interrupts me with some brain rot sentence, I respond:"
   File "C:\Users\User\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 2560, in execute
     Say.execute(self)
   File "C:\Users\User\Desktop\renpy-8.2.3-sdk\renpy\ast.py", line 615, in execute
@@ -40,4 +40,4 @@ NameError: Name 'heroine_name' is not defined.
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.3.24061702
 Brainrot Visual Novel Name Pending 1.0
-Fri Sep 20 18:03:34 2024
+Fri Oct 11 09:03:00 2024

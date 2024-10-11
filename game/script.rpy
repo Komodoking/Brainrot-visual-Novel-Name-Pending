@@ -20,10 +20,10 @@ label scene_1_hospital_office:
 
     narrator "I can’t believe my ears…"
 
-    show doctor static with dissolve
+    show doctor static at left with dissolve
     doctor "I have nothing else to say, this disease is terminal and cannot be cured at this stage. I am sorry."
 
-    show heroine normal at right
+    show heroine normal at right with dissolve
     heroine "Erm, what the sigma."
 
     narrator "I’m a 22-year-old salaryman that works at a corporation, and the girl spouting nonsense in the hospital bed is *heroine_name*, my girlfriend."
@@ -74,5 +74,53 @@ label end_scene_1:
     heroine "Hey, wait. What the skibidi?!?"
 
     narrator "I drag her out of the hospital and to our car."
+
+    jump scene_2_car
+
+# Scene 2: Car
+label scene_2_car:
+
+    scene car_interior with dissolve
+
+    narrator "The car ride home is mostly quiet."
+
+    narrator "Listening instead to the light pattering of rain on my windshield, I try my best to collect my thoughts about the recent visit at the hospital, but this is interrupted by:"
+
+    show heroine normal at right with dissolve
+    heroine "Sigma so quiet? Are you mewing?"
+
+    narrator "'heroine_name' interrupts me with some brain rot sentence, I respond:"
+
+    menu:
+        "In brain rot speech so she can better understand me.":
+            $ choice = "brainrot"
+            player_name "I have a lot to goon about skibidi, soz."
+
+            heroine "Don’t worry gooner! That doctor was a skibidi toilet from Ohio anyways."
+
+        "Normally because I don’t want to get infected.":
+            $ choice = "normal"
+            player_name "Sorry, I have a lot to think about."
+
+            narrator "She gives me a questioning look, not fully comprehending what I said. Still, she tries to reassure me anyways."
+            heroine "Don’t worry gooner! That doctor was a skibidi toilet from Ohio anyways."
+
+    narrator "I try to cheer up and not think about it too much. I try to force a smile. 'heroine_name is in a good mood despite the fuss she made about going outside this morning."
+    
+    narrator "As I continue to drive, 'heroine_name' puts on some music."
+
+    show heroine happy at right
+    heroine "See! This is some sigma beats, this should give you mad rizz!"
+
+    narrator "The music she puts on is a brainrot remix of the song 'Closer' by The Chainsmokers."
+    narrator "Most of the lyrics have been swapped out for more brainrot terms. For example, the chorus is changed from 'we ain’t never getting older' to 'we ain’t never not the rizzler'."
+    narrator "That sentence is still to this day kinda crazy to me. It works for the sake of maintaining the same feel for the song, but three instances of negation is pretty funny."
+
+    player_name "Haha, yeah…"
+
+    narrator "Thinking about the three instances of negation helps me take my mind off what happened at the doctor’s office."
+
+    narrator "We keep driving, the music playing. It helps a bit, I suppose, but I cannot help but think about what the doctor said at the hospital."
+    narrator "The world outside zooms by, but inside the car, the weight on my shoulders feels a bit lighter."
 
     return

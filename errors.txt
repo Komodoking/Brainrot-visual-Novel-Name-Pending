@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 23: end of line expected.
+    show doctor static with dissolve at left
+                                     ^
+
+Ren'Py Version: Ren'Py 8.2.3.24061702
+Fri Oct 11 09:04:12 2024
