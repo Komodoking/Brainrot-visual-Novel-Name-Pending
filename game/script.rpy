@@ -238,7 +238,7 @@ label go_to_room:
     jump continue_after_choice
 
 label continue_after_choice:
-
+    scene home_bg with fade
     narrator "After spending quality time with 'heroine_name', I am reassured that she is still the girlfriend I’ve known and loved, and despite what the doctor says, I believe there is still a chance for her."
     narrator "I think now that it is the weekend, and that I have time to spend with her, I should make her go out again tomorrow. It has been a while since we went somewhere on a date."
     narrator "She always wants to spend time inside, but with technology being the reason for her brainrot, I think it would be best for her to go somewhere outside tomorrow."
@@ -264,7 +264,7 @@ label next_scene:
 
 label scene_4_home_before_trip:
 
-    scene home_morning with fade
+    scene home_bg with fade
 
     narrator "I stir awake before 'heroine_name' does. I open my eyes and see that 'heroine_name' is hugging me in the same position we fell asleep in."
 
@@ -328,6 +328,10 @@ label carry_wake_up:
 
     heroine "Ok, we can get a grimace shake before we go."
 
+    scene home_bg with fade
+
+    show heroine normal at right
+
     # Exclusive destination dialogue
     if destination == "Park":
         narrator "Perhaps I can prepare something for the park, make some nice healthy picnic food or something."
@@ -354,13 +358,11 @@ label carry_wake_up:
     elif destination == "Aquarium":
         jump scene_5_trip_to_aquarium  
 
-label water_wake_up:
+label water_wake_up_cg:
 
     narrator "I go to the laundry room and fill up a basin with cold water. I return to the bedroom and dump the cold water on 'heroine_name'."
 
     play sound "water splash.mp3"
-
-    show heroine suprised at right
 
     heroine "What the skibidi?!?"
 
@@ -381,6 +383,10 @@ label water_wake_up:
     narrator "She stops her assault when she hears what I said."
 
     heroine "W-what!? Why would I go to the [destination]?"
+
+    scene home_bg with fade
+
+    show heroine normal at right
 
     # Exclusive destination dialogue
     if destination == "Aquarium":
@@ -439,12 +445,10 @@ label water_wake_up:
     elif destination == "Aquarium":
         jump scene_5_trip_to_aquarium  
 
-
+#park scene
 label scene_5_trip_to_park:
 
-    scene park_morning with dissolve
-
-    narrator "As [heroine_name] is getting ready, I start thinking about what food I can cook to bring to the park. I lied to her; I will not be getting her Grimace shake on the way. I haven’t cooked for her in some time, and maybe eating some home-cooked cuisine will help her condition. What should I prepare for this outing?"
+    narrator "As 'heroine name' is getting ready, I start thinking about what food I can cook to bring to the park. I lied to her; I will not be getting her a Grimace shake on the way. I haven’t cooked for her in some time, and maybe eating some home-cooked cuisine will help her condition. What should I prepare for this outing?"
 
     menu:
         "Pesto Chicken Sandwich":
@@ -461,7 +465,7 @@ label scene_5_trip_to_park:
 
 label food_prepared:
 
-    narrator "After finishing up the [food_choice], [heroine_name] comes down just as I wrap up cooking, saving the surprise."
+    narrator "After finishing up the [food_choice], 'heroine name' comes down just as I wrap up cooking, saving the surprise."
 
     player_name "Ready to go?"
 
@@ -470,7 +474,7 @@ label food_prepared:
     scene park_pathway with dissolve
 
     narrator "On the way to the park, we see people walking their dogs, children playing, and a decent number of people hanging out. For a Saturday, it isn’t busy at all. It’s nice and peaceful."
-    narrator "Still, [heroine_name] nervously clings to my arm."
+    narrator "Still, 'heroine name' nervously clings to my arm."
 
     heroine "[player_name], there are too many betas here, I’m losing aura."
 
@@ -478,7 +482,8 @@ label food_prepared:
 
     narrator "As we continue to walk, I spot an empty bench in the middle of the park. I decide to have her take a break. I am practically dragging her as she clings to my arm, and since I’m also carrying the lunch I prepared, both my arms are fatigued."
 
-    scene park_bench with fade
+    # Start CG here 
+    scene park_sit_cg with dissolve
 
     narrator "I sit her down on the bench."
 
@@ -493,6 +498,14 @@ label food_prepared:
     narrator "I still haven’t figured out if she thinks Ohio is the best or worst place in the world."
 
     player_name "Here, this might be a good place to eat."
+
+    # Change to feeding CG based on the chosen food
+    if food_choice == "Pesto Chicken Sandwich":
+        scene park_feed_pesto with dissolve
+    elif food_choice == "Katsu Bento Box":
+        scene park_feed_bento with dissolve
+    elif food_choice == "Spaghetti":
+        scene park_feed_spaghetti with dissolve
 
     narrator "I take some of the [food_choice] and start feeding it to her."
 
@@ -524,7 +537,10 @@ label food_prepared:
 
     heroine "I don’t think so, sir skibidi! I mog you!"
 
-    narrator "After hearing her taunt me, I take a moment to think. On one hand, I know if I use a little more force, I could definitely surprise her and take the food, but that might be going overboard. It could result in her getting angry, or perhaps we’d spill the food, making it a net loss for both of us. I could also distract her, get her to go on a brain rot tangent, then steal the food. Or, I could just let it go and accept defeat."
+    scene park_pathway with dissolve
+    show heroine suprised at right with dissolve
+
+    narrator "She looks surprised as I lunge forward in an attempt to reclaim my food."
 
     menu:
         "Use force and take the food":
@@ -538,6 +554,8 @@ label food_prepared:
 
 label force_take_food:
 
+    show heroine angry at right with dissolve
+
     narrator "I use the element of surprise to grab her and hold her down to reclaim some of the food I lost."
 
     player_name "Take this!"
@@ -545,6 +563,8 @@ label force_take_food:
     narrator "I lunge towards her in one fell swoop to take my food, but she tries to resist again."
 
     heroine "H-Hey [player_name]! You already tried to mog me and it didn’t work! So give u—"
+
+    show heroine suprised at right with dissolve
 
     narrator "In an attempt to get away from me, she clumsily knocks over my food. In surprise, or just out of reflex, she drops her food as well."
 
@@ -560,17 +580,21 @@ label force_take_food:
 
 label strategic_take_food:
 
+    show heroine thinking at right with dissolve
+
     narrator "I try to get her to go on a rant about something. Maybe a show she’s watching or a game she’s playing."
 
-    player_name "Hey [heroine_name]? What have you been up to these days? Any cool things you've been doing?"
+    player_name "Hey 'heroine name'? What have you been up to these days? Any cool things you've been doing?"
 
-    narrator "[heroine_name] puts her finger to her chin and ponders the question before knowing what she wants to say."
+    narrator "'heroine name' puts her finger to her chin and ponders the question before knowing what she wants to say."
 
     heroine "Yeah, I’ve been grinding for the new character in my gacha game! She’s a sigma counter-based unit who can mog with massive damage if the enemy attacks at the right time…"
 
     narrator "As she continues, I subtly sneak my hand towards the food."
 
     heroine "…with this you can send most endgame betas to Ohio."
+
+    show heroine suprised at right with dissolve
 
     narrator "At just the right moment, I steal some of her food successfully. As if breaking out of her trance, she notices."
 
@@ -582,15 +606,21 @@ label strategic_take_food:
 
 label let_it_go:
 
-    narrator "I decide to let it go. However, I must have looked sad or something because [heroine_name] speaks up."
+    show heroine confused at right with dissolve
+
+    narrator "I decide to let it go. However, I must have looked sad or something because 'heroine name' speaks up."
 
     heroine "What’s wrong sigma? Mad that you couldn’t successfully tax me? I feel Duke Dennis, here!"
+
+    show heroine happy at right with dissolve
 
     narrator "She shows me some of her food, gesturing for me to eat some."
 
     heroine "I am feeling like group leader right now. So eat up Turkish Quandale Dingle!"
 
     narrator "I guess I ended up winning in the end. I reach over and eat it off her chopstick/hand/fork (depending on the [food_choice])."
+
+    show heroine embarrassed at right with dissolve
 
     narrator "She blushes with embarrassment, shocked that I ate directly from the utensil instead of picking it up myself. She backs up, hitting her elbow against the bench, and promptly drops food all over the both of us."
 
@@ -610,7 +640,7 @@ label let_it_go:
 
     player_name "Haha, yeah!"
 
-    narrator "People in the park are laughing at our antics. Still, I understand why [heroine_name] might be embarrassed."
+    narrator "People in the park are laughing at our antics. Still, I understand why 'heroine name' might be embarrassed."
 
     player_name "Let's clean up and finish the rest at home."
 
@@ -619,5 +649,6 @@ label let_it_go:
     narrator "We clean up and get going."
 
     return
+
 
 

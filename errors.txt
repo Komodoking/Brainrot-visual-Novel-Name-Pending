@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 126: end of line expected.
-    jump scene_3_home:
-                     ^
+File "game/script.rpy", line 331: expected 'image_name_component' not found.
+    scene show heroine normal at right
+          ^
+
+File "game/script.rpy", line 385: expected 'image_name_component' not found.
+    scene show heroine normal at right
+          ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Wed Oct 16 08:29:36 2024
+Mon Oct 21 13:19:45 2024
