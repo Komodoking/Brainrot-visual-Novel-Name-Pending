@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 331: expected 'image_name_component' not found.
-    scene show heroine normal at right
-          ^
-
-File "game/script.rpy", line 385: expected 'image_name_component' not found.
-    scene show heroine normal at right
-          ^
+File "game/script.rpy", line 24: end of line expected.
+    show doctor static at left with zoom 0.5
+                                         ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Mon Oct 21 13:19:45 2024
+Wed Oct 23 16:33:12 2024

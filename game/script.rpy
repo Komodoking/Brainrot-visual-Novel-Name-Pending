@@ -1,6 +1,7 @@
 ﻿# Character Definitions
 define player_name = Character("[player_name]", color="#0000fa")
 define doctor = Character("Doctor", color="#ffffff") # Static doctor character
+image doctor static = "images/doctor.png"
 define heroine = Character("Heroine", color="#d400ff", what_prefix="H: ") # Heroine with prefix
 define grandma = Character("Grandma", color="#ffffff") 
 # Enter Name Subscene
@@ -20,7 +21,8 @@ label scene_1_hospital_office:
 
     narrator "I can’t believe my ears…"
 
-    show doctor static at left with dissolve
+    show doctor static at left
+
     doctor "I have nothing else to say, this disease is terminal and cannot be cured at this stage. I am sorry."
 
     show heroine normal at right with dissolve
