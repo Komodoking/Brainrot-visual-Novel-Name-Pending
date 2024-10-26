@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 24: end of line expected.
-    show doctor static at left with zoom 0.5
-                                         ^
+File "game/script.rpy", line 732: expected statement.
+    food_choice = "Orange Chicken Combo"
+                ^
+
+File "game/script.rpy", line 736: expected statement.
+    food_choice = "Tonkotsu Ramen"
+                ^
+
+File "game/script.rpy", line 740: expected statement.
+    food_choice = "New York Burger"
+                ^
 
 Ren'Py Version: Ren'Py 8.2.3.24061702
-Wed Oct 23 16:33:12 2024
+Sat Oct 26 03:03:49 2024

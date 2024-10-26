@@ -4,6 +4,11 @@ define doctor = Character("Doctor", color="#ffffff") # Static doctor character
 image doctor static = "images/doctor.png"
 define heroine = Character("Heroine", color="#d400ff", what_prefix="H: ") # Heroine with prefix
 define grandma = Character("Grandma", color="#ffffff") 
+define clerk = Character("Clerk", color="#ffffff")
+image clerk neutral= "images/clerk.png"
+
+default food_choice = None
+
 # Enter Name Subscene
 label start:
     $ player_name = renpy.input("Please enter your name:")
@@ -652,5 +657,232 @@ label let_it_go:
 
     return
 
+label scene_5_trip_to_mall:
+
+    # Start with the heroine sprite as she gets ready for the mall
+    show heroine happy at right with dissolve
+
+    narrator "As 'heroine name' starts to get ready for the mall, I begin thinking about our itinerary. The mall has many activities, including clothing stores, the usual food court, and a pretty cool arcade with rigged claw machines."
+
+    heroine "Alright chat, I am ready to mog. You will regret challenging me, I will edge your Ohio!"
+
+    narrator "We head to the mall."
+
+    # Change to a mall interior background
+    scene mall_interior with dissolve
+
+    narrator "As someone who doesn’t go out very much, I’ve always thought our local mall was quite grandiose. With three stories and a fancy design, it’s a bit intimidating."
+    narrator "'heroine name' squeezes my hand a bit tighter, so I sense she feels the same."
+
+    # Switch to the clothes store
+    scene clothes_store with dissolve
+
+    narrator "We start exploring the mall, beginning at the clothing section."
+
+    show heroine proud at center with dissolve
+    heroine "Chat, how does this look? I look very sigma, do I not? Clearly, I mog everybody in this store for sure!"
+
+    narrator "'heroine name' is trying on a fancy outfit. I can’t help but smile; she looks great in it."
+
+    player_name "It looks really good on you. Do you want me to buy this for you?"
+
+    show heroine confused at center with dissolve
+    heroine "Erm, what the sigma? This skin totally doesn’t match my style. Plus it costs too much robux! I might mog people, but that doesn’t mean I need to get it. I’d rather have that money spent on something sigma, like gacha currency or Valorant skins."
+
+    player_name "Ah, I see."
+
+    narrator "Even before the brain rot, she was always economical when it came to clothes."
+
+    # Move to the hobby shop scene
+    scene hobby_shop with dissolve
+
+    narrator "Our next stop is the hobby shop. This is a place I frequent; they have lots of cool stuff that both me and 'heroine name' like."
+
+    show heroine excited at center with dissolve
+    heroine "Look, [player_name]! This Gunpla kit is so skibidi! Oh, but this one is pretty sigma too! Ah, there are so many, can we get them all?"
+
+    narrator "Before I can answer, she runs to the next part of the Gunpla section."
+
+    player_name "See? It wouldn’t be the same as looking at them online."
+
+    show heroine blushing at center with dissolve
+    heroine "Yeah, I guess it is pretty sigma. Can’t let gang know I fw this. You truly do have rizz when it comes to making me go out."
+
+    narrator "Just for that look she gives me, I fold immediately and purchase her the stack of Gunpla."
+
+    heroine "Really? You are paying all this V-bucks for me?"
+
+    player_name "Well, I do like these kits too; we can build them together."
+
+    narrator "I blush as I swipe my card at the register. She embraces me."
+
+    heroine "Thanks, [player_name]. I love you!"
+
+    narrator "But just as quickly as she goes in for the hug, she backs away. She has always been shy about displaying affection in public."
+
+    show heroine embarrassed at center with dissolve
+    heroine "I-I mean thanks, [player_name]…."
+
+    narrator "People are staring, so we promptly leave after paying."
+
+    # Move to the food court scene
+    scene food_court with dissolve
+
+    narrator "We continue along our journey in the mall, holding hands as we head to the food court. There are tons of various foods. I decide we should get:"
+    menu:
+        "Chinese food":
+            $ food_choice = "Orange Chicken Combo"
+            jump chinese_food_order
+
+        "Ramen shop":
+           
+            jump ramen_food_order
+
+        "Burger place":
+            
+            jump burger_food_order
+
+label chinese_food_order:
+    $ food_choice = "Orange Chicken Combo"
+    narrator "We decide to get some Chinese food. 'heroine name' seems to agree, but I have a surprise twist coming."
+    jump order_food
+
+label ramen_food_order:
+    $ food_choice = "Tonkotsu Ramen Combo"
+    narrator "We decide to get some ramen. 'heroine name' seems to agree, but I have a surprise twist coming."
+    jump order_food
+
+label burger_food_order:
+    $ food_choice = "New York Burger Combo"
+    narrator "We decide to get some burgers. 'heroine name' seems to agree, but I have a surprise twist coming."
+    jump order_food
+
+label order_food:
+
+    narrator "In an attempt to get 'heroine name' to speak normally, I make her order for herself. Surely she will have to speak normally in public."
+    show clerk at right with dissolve
+    clerk "What would you like to order?"
+
+    show heroine angry at left with dissolve
+    narrator "She hides behind me, like she usually does when it comes to people. Normally, I would order for her, but today is different."
+
+    player_name "Go on, order."
+
+    show heroine embarrassed at left with dissolve
+    heroine "O-one sigma meal p-please…."
+
+    clerk "I’m sorry, I can’t seem to hear you, miss. Can you speak up?"
+
+    show heroine angry at left with dissolve
+    heroine "C-C-C-Can I p-p-p-please get a [food_choice]"
+
+    player_name "Make that two, please."
+
+    clerk "Okay, just one second."
+
+    # Sitting at the table in the food court
+    scene food_court_table with dissolve
+
+    narrator "We get our food and sit in the food court."
+
+    show heroine angry at right with dissolve
+    heroine "[player_name]! Why did you make me lose aura like that? We got me losing aura before GTA 6."
+
+    player_name "Just a little trolling. Besides, you managed to order it properly, didn’t you? If we keep going out more, you’ll have no problem doing stuff like this. Think of it as training… like rizz maxing or something."
+
+    show heroine pondering at right with dissolve
+    heroine "Hmm, I guess this could be used to level up my rizz."
+
+    narrator "She puts her hand to her chin, pondering what I just said."
+
+    show heroine happy at right with dissolve
+    heroine "Okay, I forgive you, sigma! Perhaps it was a 1000 IQ gyatt move! On another note, this food looks bussin!"
+
+    narrator "'heroine name' seems to thoroughly enjoy her [food_choice]. We finish eating and head to the arcade in the mall."
+
+    # Arcade scene
+    scene arcade_interior with dissolve
+
+    narrator "The arcade is filled with a wide variety of games. Claw machines, racing games, shooting games, fighting games, and 'heroine name''s favorite: Rhythm dance games."
+
+    show heroine excited at right with dissolve
+    heroine "Look, [player_name]! They have Dance Dance Combo 7! I will mog you in this."
+
+    player_name "Don’t you want to play some other games first? If we do the dancing game now, you’ll be too tired to play the others."
+
+    heroine "No! We should Fortnite Festival now or someone else will take the machine. Come on, [player_name]. Are you scared or something? Not a true sigma, huh?"
+
+    player_name "Okay, you’re on!"
+
+    narrator "We get on the machine and start playing."
+
+    # CG transition for the claw machine
+    scene claw_machine_cg with dissolve
+
+    narrator "After getting tired of dancing games, we move to the claw machine, where 'heroine name' spots a plushie she wants."
+
+    show heroine determined at center with dissolve
+    heroine "We have gyatt to acquire it! Come on, claw machine!"
+
+    # Continue with CG interactions and choices
+    menu:
+        "Let me try the claw machine":
+            jump try_claw_machine
+
+        "Feed more money into the machine":
+            jump feed_more_money
+
+label try_claw_machine:
+
+    player_name "Move over, let me try."
+
+    show heroine reluctant at center with dissolve
+    heroine "Okay, [player_name]. Do your best! But this machine is jelqing the mogger!"
+
+    narrator "I try to align the claw with the prize and somehow manage to lift it."
+
+    heroine "You got it, [player_name]! Just a little further."
+
+    narrator "The claw moves toward the payout area, but it drops just before landing. The plushie teeters on the partition."
+
+    player_name "Come on, come on! I believe."
+
+    narrator "After a moment of suspense, the plushie falls into the prize area."
+
+    show heroine happy at center with dissolve
+    heroine "You did it! You are so goated! I love you!"
+
+    narrator "We embrace excitedly, ignoring the people around us. Realizing we’ve caused a scene, 'heroine name' backs away in embarrassment."
+
+    show heroine embarrassed at center with dissolve
+    heroine "Um, [player_name]? We should get going; people are looking at us."
+
+    player_name "Y-Yeah."
+
+    narrator "We head home after a fun day at the mall."
+
+    return
+
+label feed_more_money:
+
+    narrator "We keep feeding money into the machine, but each time the claw gets close, it drops the prize."
+
+    player_name "This is the last dollar I have."
+
+    heroine "Come on, [player_name]! 99% of gamblers quit right before they win. This time for sure, I believe."
+
+    narrator "After spending over $50, we finally secure the prize, but we are exhausted."
+
+    player_name "Is this plushie really that rare?"
+
+    heroine "Of course, gooner. It’s a limited-time event only in some machines. Still, I wish it didn’t take so long to fanum tax this plushie's gyatt…"
+
+    player_name "Well, at least we had fun. Let’s go home."
+
+    heroine "Okay, [player_name]. I guess it was fun with you."
+
+    narrator "We leave to go home, content with our day."
+
+    return
 
 
