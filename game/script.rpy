@@ -613,7 +613,7 @@ label strategic_take_food:
 
 label let_it_go:
 
-    show heroine confused at right with dissolve
+    show heroine thinking at right with dissolve
 
     narrator "I decide to let it go. However, I must have looked sad or something because 'heroine name' speaks up."
 
@@ -686,7 +686,7 @@ label scene_5_trip_to_mall:
 
     player_name "It looks really good on you. Do you want me to buy this for you?"
 
-    show heroine confused at center with dissolve
+    show heroine thinking at center with dissolve
     heroine "Erm, what the sigma? This skin totally doesn’t match my style. Plus it costs too much robux! I might mog people, but that doesn’t mean I need to get it. I’d rather have that money spent on something sigma, like gacha currency or Valorant skins."
 
     player_name "Ah, I see."
@@ -698,14 +698,14 @@ label scene_5_trip_to_mall:
 
     narrator "Our next stop is the hobby shop. This is a place I frequent; they have lots of cool stuff that both me and 'heroine name' like."
 
-    show heroine excited at center with dissolve
+    show heroine happy at center with dissolve
     heroine "Look, [player_name]! This Gunpla kit is so skibidi! Oh, but this one is pretty sigma too! Ah, there are so many, can we get them all?"
 
     narrator "Before I can answer, she runs to the next part of the Gunpla section."
 
     player_name "See? It wouldn’t be the same as looking at them online."
 
-    show heroine blushing at center with dissolve
+    show heroine embarrassed at center with dissolve
     heroine "Yeah, I guess it is pretty sigma. Can’t let gang know I fw this. You truly do have rizz when it comes to making me go out."
 
     narrator "Just for that look she gives me, I fold immediately and purchase her the stack of Gunpla."
@@ -790,7 +790,7 @@ label order_food:
 
     player_name "Just a little trolling. Besides, you managed to order it properly, didn’t you? If we keep going out more, you’ll have no problem doing stuff like this. Think of it as training… like rizz maxing or something."
 
-    show heroine pondering at right with dissolve
+    show heroine thinking at right with dissolve
     heroine "Hmm, I guess this could be used to level up my rizz."
 
     narrator "She puts her hand to her chin, pondering what I just said."
@@ -805,7 +805,7 @@ label order_food:
 
     narrator "The arcade is filled with a wide variety of games. Claw machines, racing games, shooting games, fighting games, and 'heroine name''s favorite: Rhythm dance games."
 
-    show heroine excited at right with dissolve
+    show heroine happy at right with dissolve
     heroine "Look, [player_name]! They have Dance Dance Combo 7! I will mog you in this."
 
     player_name "Don’t you want to play some other games first? If we do the dancing game now, you’ll be too tired to play the others."
@@ -821,7 +821,7 @@ label order_food:
 
     narrator "After getting tired of dancing games, we move to the claw machine, where 'heroine name' spots a plushie she wants."
 
-    show heroine determined at center with dissolve
+    show heroine proud at center with dissolve
     heroine "We have gyatt to acquire it! Come on, claw machine!"
 
     # Continue with CG interactions and choices
