@@ -6,7 +6,10 @@ define heroine = Character("Heroine", color="#d400ff", what_prefix="H: ") # Hero
 define grandma = Character("Grandma", color="#ffffff") 
 define clerk = Character("Clerk", color="#ffffff")
 image clerk neutral= "images/clerk.png"
-
+#backgrounds
+image hospital_office="images/hospital(credit Gutari Nyanko).jpg"
+image car_interior="images/car.jpg"
+image home_bg="images/house_bg.jpg"
 default food_choice = None
 
 # Enter Name Subscene
@@ -135,7 +138,7 @@ label scene_2_car:
 # Scene 3: Home
 label scene_3_home:
 
-    scene home_background with fade
+    scene home_bg with fade
 
     narrator "Back at our apartment, I don't feel as easygoing. Maybe it's all her brainrot I was listening to, or maybe reality is setting in?"
 
